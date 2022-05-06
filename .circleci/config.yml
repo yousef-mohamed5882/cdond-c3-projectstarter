@@ -308,7 +308,7 @@ jobs:
       - destroy-environment
       - revert-migrations  
 
-#   smoke-test:
+#   smoke-test:d
 #     docker:
 #       # Lightweight Docker image 
 #     steps:
