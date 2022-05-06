@@ -27,8 +27,6 @@ commands:
       Workflow_ID:
         type: string
         default: ${CIRCLE_WORKFLOW_ID:0:7}
-    docker:
-    - image: amazon/aws-cli
     steps:
       - run:
           name: Destroy environments
@@ -194,6 +192,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - install_aws_cli 
       - install_ansible
       - add_ssh_keys:
           fingerprints: ["fa:19:b2:9b:88:9b:04:7d:36:e7:af:b5:e8:f7:57:ba"]
