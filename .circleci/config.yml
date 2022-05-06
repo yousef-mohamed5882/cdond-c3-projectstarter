@@ -243,6 +243,8 @@ jobs:
       - checkout
       - install_aws_cli
       - install_nodejs
+      - restore_cache: 
+          keys: [frontend-deps]
       - run:
           name: Install dependencies
           command: |
