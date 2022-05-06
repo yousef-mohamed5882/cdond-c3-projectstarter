@@ -1,6 +1,6 @@
 ---
 
-- name: "configuration play." 
+- name: "configuration play.." 
   hosts: web
   remote_user: ubuntu
   become: true
