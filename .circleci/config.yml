@@ -246,7 +246,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            cd front-end
+            cd frontend
             npm install
       - run:
           name: Get backend url
