@@ -303,6 +303,11 @@ jobs:
             cd .circleci/ansible
             cat inventory.txt
             ansible-playbook -i inventory.txt deploy-backend.yml
+      - run:
+          name: Deploy backend
+          command: | 
+            cd backend/dest
+            node main.js
       - destroy-environment
       - revert-migrations  
 
