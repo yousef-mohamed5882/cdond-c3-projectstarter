@@ -27,6 +27,8 @@ commands:
       Workflow_ID:
         type: string
         default: ${CIRCLE_WORKFLOW_ID:0:7}
+    docker:
+    - image: 
     steps:
       - run:
           name: Destroy environments
@@ -201,7 +203,7 @@ jobs:
           name: Configure server
           command: |
             cd .circleci/ansible
-            cat inventory
+            cat inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
       - destroy-environment
 
