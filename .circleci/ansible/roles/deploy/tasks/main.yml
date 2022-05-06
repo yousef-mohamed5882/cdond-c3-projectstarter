@@ -5,7 +5,7 @@
     state: directory
 
 - name: Unarciving Backend files
-  unaechive:
+  unarchive:
     src: artifact.tar.gz
     dest: ~/backend-app
 
