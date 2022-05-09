@@ -203,7 +203,7 @@ jobs:
       - install_aws_cli 
       - install_ansible
       - add_ssh_keys:
-          fingerprints: ["cf:47:2b:ed:51:9c:dc:f2:0c:a6:f3:6e:d6:82:dc:c3"]
+          fingerprints: ["7e:ab:9d:43:4a:25:19:97:dd:30:e5:3e:c0:90:1e:f9"]
       - attach_workspace:
           at: ~/
       - run:
@@ -278,7 +278,7 @@ jobs:
       - install_ansible
       - install_nodejs
       - add_ssh_keys:
-          fingerprints: ["fa:19:b2:9b:88:9b:04:7d:36:e7:af:b5:e8:f7:57:ba"]
+          fingerprints: ["7e:ab:9d:43:4a:25:19:97:dd:30:e5:3e:c0:90:1e:f9"]
       - attach_workspace:
           at: ~/
       - restore_cache:
@@ -293,7 +293,7 @@ jobs:
           command: |
             cd backend
             npm run build
-            tar -czf artifact.tar.gz dist/* package*
+            tar -czf artifact.tar.gz dist/* package* node_modules/*
             cd ..
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
       - run:
