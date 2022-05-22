@@ -221,7 +221,7 @@ jobs:
       - checkout
       - install_awscli
       - run:
-          name: Run migration
+          name: Run migrations
           command: |
             cd backend
             npm install
