@@ -38,7 +38,7 @@ Resources:
     Properties:
       Tags:
         - Key: Name
-          value: !Sub EIP-${ID}
+          Value: !Sub EIP-${ID}
   
   MyEIPAssoc:
     Type: AWS::EC2::EIPAssociation
