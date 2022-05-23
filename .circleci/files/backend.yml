@@ -39,8 +39,8 @@ Resources:
       InstanceId: !Ref EC2Instance
 
 Outputs:
-  EIP:
+  EIP1:
     Value: !Ref eipName
     Description: URL for website hosted on S3
     Export:
-      Name: EIP
+      Name: EIP1
