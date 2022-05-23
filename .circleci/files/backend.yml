@@ -33,19 +33,23 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub backend-${ID}
-  eipName:
+  MyEIP:
     Type: AWS::EC2::EIP
     Properties:
+      Tags:
+        - key: Name
+          value: !Sub EIP-${ID}
+  
+  MyEIPAssoc:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      AllocationId: !GetAtt MyEIP.AllocationId
       InstanceId: !Ref EC2Instance
+  
 
 Outputs:
-  EIP1:
+  EIPAddress:
     Value: !Ref eipName
     Description: EIP
     Export:
-      Name: EIP1
-  WorkflowID:
-    Value: !Sub ${ID}
-    Description: URL for website hosted on S3
-    Export:
-      Name: WorkflowID
+      Name: !Sub EIP-${ID}
