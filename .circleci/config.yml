@@ -383,7 +383,7 @@ jobs:
       - install_awscli
       - install_nodejs
       - run:
-          name: Remove old stacks and files
+          name: Remove old stacks and filess
           command: |
             export STACKS=($(aws cloudformation list-stacks \
                 --query "StackSummaries[*].StackName" \
